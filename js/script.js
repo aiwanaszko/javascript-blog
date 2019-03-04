@@ -49,3 +49,32 @@ const links = document.querySelectorAll('.titles a');
 for(let link of links){
   link.addEventListener('click', titleClickHandler);
 }
+
+function generateTitleLinks() {
+  console.log('Title links have been generated');
+
+  const optArticleSelector = '.post',
+    optTitleSelector = '.post-titles',
+    optTitleListSelector = '.titles';
+
+    /* remove contents of titlelist */
+
+    const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
+
+    /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
+}
+
+// pod deklaracja funkcji dodac jej wywolanie
+
+generateTitleLinks();
