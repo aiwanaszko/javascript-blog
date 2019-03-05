@@ -54,16 +54,17 @@ function generateTitleLinks() {
   console.log('Title links have been generated');
 
   const optArticleSelector = '.post',
-    optTitleSelector = '.post-titles',
+    optTitleSelector = '.post-title',
     optTitleListSelector = '.titles';
 
     /* remove contents of titlelist */
 
-    const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
+    const titleList = document.querySelector(optTitleListSelector);
+    titleList.innerHTML = '';
 
     /* for each article */
 
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(optArtija cleSelector);
 
     for(let article of articles){
 
@@ -75,7 +76,7 @@ function generateTitleLinks() {
     /* find the title element */
     /* get the title from the title element */
     console.log(article.querySelector(optTitleSelector));
-    
+
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     console.log(articleTitle);
 
