@@ -1,6 +1,6 @@
 'use strict';
 
-function titleClickHandler(event){
+function titleClickHandler(event) {
   event.preventDefault();
   const clickedElement = this;
   console.log('Link was clicked!');
@@ -10,7 +10,7 @@ function titleClickHandler(event){
 
   const activeLinks = document.querySelectorAll('.titles a.active');
 
-  for(let activeLink of activeLinks){
+  for (let activeLink of activeLinks) {
     activeLink.classList.remove('active');
   }
 
@@ -48,9 +48,10 @@ function titleClickHandler(event){
 function generateTitleLinks() {
   console.log('Title links have been generated');
 
-  const optArticleSelector = '.post',
-    optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles';
+  const optArticleSelector = '.post';
+  const optTitleSelector = '.post-title';
+  const optTitleListSelector = '.titles';
+  const optArticleTagsSelector = '.post-tags .list';
 
     /* remove contents of titlelist */
 
@@ -63,10 +64,8 @@ function generateTitleLinks() {
 
     let html = '';
 
-    for(let article of articles){
-
+    for (let article of articles) {
     /* get the article id */
-
     const articleId = article.getAttribute('id');
     console.log(articleId);
 
@@ -95,7 +94,7 @@ function generateTitleLinks() {
     console.log(links);
 
 
-    for(let link of links){
+    for (let link of links) {
       link.addEventListener('click', titleClickHandler);
     }
   }
@@ -103,3 +102,31 @@ function generateTitleLinks() {
 // call function
 
 generateTitleLinks();
+
+function generateTags(){
+  /* find all articles */
+
+  /* START LOOP: for every article: */
+
+    /* find tags wrapper */
+
+    /* make html variable with empty string */
+
+    /* get tags from data-tags attribute */
+
+    /* split tags into array */
+
+    /* START LOOP: for each tag */
+
+      /* generate HTML of the link */
+
+      /* add generated code to html variable */
+
+    /* END LOOP: for each tag */
+
+    /* insert HTML of all the links into the tags wrapper */
+
+  /* END LOOP: for every article: */
+}
+
+generateTags();
