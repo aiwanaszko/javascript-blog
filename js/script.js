@@ -103,30 +103,54 @@ function generateTitleLinks() {
 
 generateTitleLinks();
 
-function generateTags(){
-  /* find all articles */
+function generateTags() {
+  console.log('Tags have been generated');
 
+  const optArticleSelector = '.post';
+  const optTitleSelector = '.post-title';
+  const optTitleListSelector = '.titles';
+  const optArticleTagsSelector = '.post-tags .list';
+
+  /* find all articles */
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log(articles);
   /* START LOOP: for every article: */
+  for (let article of articles) {
 
     /* find tags wrapper */
+    const tagsWrapper = article.querySelector(optArticleTagsSelector);
+    console.log(tagsWrapper);
 
     /* make html variable with empty string */
+    let html  = '';
 
     /* get tags from data-tags attribute */
+    const articleTags = article.getAttribute('data-tags');
+    console.log(articleTags);
 
     /* split tags into array */
+    const articleTagsArray = articleTags.split(' ');
+    console.log(articleTagsArray);
 
-    /* START LOOP: for each tag */
+  /* START LOOP: for each tag */
+    for (let tag of articleTagsArray) {
 
       /* generate HTML of the link */
+      let tagsLink = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> '
+      console.log(tagsLink);
 
       /* add generated code to html variable */
+      html = html + tagsLink
 
     /* END LOOP: for each tag */
+    }
 
     /* insert HTML of all the links into the tags wrapper */
 
+    tagsWrapper.innerHTML = html
+
   /* END LOOP: for every article: */
+  }
 }
 
 generateTags();
