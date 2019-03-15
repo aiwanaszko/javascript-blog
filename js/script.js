@@ -1,5 +1,14 @@
 'use strict';
 
+const optArticleSelector = '.post';
+const optTitleSelector = '.post-title';
+const optTitleListSelector = '.titles';
+const optArticleTagsSelector = '.post-tags .list';
+const optCloudClassCount = 5;
+const optCloudClassPrefix = 'tag-size-';
+const optTagsListSelector = '.tags.list';
+const optArticleAuthorSelector = '.post-author';
+const optAuthorsListSelector = '.authors.list';
 
 
 function titleClickHandler(event) {
@@ -50,11 +59,6 @@ function titleClickHandler(event) {
 function generateTitleLinks(customSelector = '') {
   console.log('Title links have been generated');
   console.log(customSelector);
-
-  const optArticleSelector = '.post';
-  const optTitleSelector = '.post-title';
-  const optTitleListSelector = '.titles';
-  const optArticleTagsSelector = '.post-tags .list';
 
     /* remove contents of titlelist */
 
@@ -128,8 +132,7 @@ function calculateTagsParams(tags) {
   return params;
 }
 
-const optCloudClassCount = 5;
-const optCloudClassPrefix = 'tag-size-';
+
 
 function calculateTagClass(count, params) {
   const normalizedCount = count - params.min;
@@ -143,12 +146,6 @@ function calculateTagClass(count, params) {
 
 function generateTags() {
   console.log('Tags have been generated');
-
-  const optArticleSelector = '.post';
-  const optTitleSelector = '.post-title';
-  const optTitleListSelector = '.titles';
-  const optArticleTagsSelector = '.post-tags .list';
-  const optTagsListSelector = '.tags.list';
 
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
@@ -290,10 +287,6 @@ addClickListenersToTags();
 
 function generateAuthors() {
   console.log('Authors have been generated');
-
-  const optArticleSelector = '.post';
-  const optArticleAuthorSelector = '.post-author';
-  const optAuthorsListSelector = '.authors.list';
 
   /* [NEW] create a new variable allTAuthors with an empty object */
   let allAuthors = {};
