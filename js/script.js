@@ -138,7 +138,6 @@ function calculateTagClass(count, params) {
   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
 
   return optCloudClassPrefix + classNumber
-  console.log(optCloudClassPrefix + classNumber);
 }
 
 
@@ -214,7 +213,7 @@ function generateTags() {
     /* [NEW] START LOOP: for each tag in allTags */
     for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
-      allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + ' (' + allTags[tag] + ') ' + '</a></li> '
+      allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag  + '</a></li> '
     /* [NEW] END LOOP: for each tag in allTags */
 
     /* [NEW] add html from allTagsHTML to tagList */
